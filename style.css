@@ -1,0 +1,190 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    /* 移除原有背景色 */
+    position: relative; /* 为遮罩层定位做准备 */
+    min-height: 100vh; /* 确保撑满屏幕高度 */
+    
+    /* 新增背景图设置 */
+    background-image: url('images/tech-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* 实现视差滚动效果 */
+}
+
+/* 新增半透明遮罩层 */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9); /* 白色遮罩90%透明度 */
+    z-index: -1; /* 确保内容在前景显示 */
+}
+
+
+header {
+    background: #35424a;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: #e8491d;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 修改后的section样式 */
+section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.3); /* 30%不透明度 */
+    border-radius: 5px;
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 半透明边框 */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+/* 单独加强项目卡片对比度 */
+.project-card {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 0.7rem;
+    background: #35424a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e8491d;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #35424a;
+    color: white;
+}
+/* 新增链接卡片样式 */
+#links {
+    background: #f9f9f9;
+    padding: 2rem 1rem;
+}
+
+.link-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: transform 0.3s ease;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.platform-link {
+    text-decoration: none;
+    color: #35424a;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.platform-link h3 {
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e8491d;
+    display: inline-block;
+}
+
+.link-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+header, main, footer {
+    position: relative; /* 确保显示在遮罩层上方 */
+    z-index: 1;
+}
+
+/* 增强内容区域对比度 */
+section {
+    background: rgba(255, 255, 255, 1); /* 半透明白色背景 */
+    border: 1px solid rgba(0,0,0,0.1);     /* 更柔和的边框 */
+    backdrop-filter: blur(2px);            /* 毛玻璃效果（可选） */
+}
+@media (prefers-color-scheme: dark) {
+    body::after {
+        background: rgba(0, 0, 0, 0.85); /* 深色遮罩,夜间模式 */
+    }
+    section {
+        background: rgba(0, 0, 0, 0.9);
+        color: #eee;
+    }
+}
+/* 文字投影增强 */
+section h2, 
+section h3 {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project-card p,
+.link-card p {
+    color: rgba(0,0,0,0.8);
+    text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>欢迎来到我的网站</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#projects">我的项目</a></li>
+                <li><a href="#contact">联系我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>关于我</h2>
+            <p>这里写一些关于你自己的介绍...</p>
+            <img src="images/your-photo.jpg" alt="我的照片" width="200">
+        </section>
+
+        <section id="projects">
+            <h2>我的项目</h2>
+            <div class="project-card">
+                <h3>项目1</h3>
+                <p>项目描述...</p>
+            </div>
+            <div class="project-card">
+                <h3>项目2</h3>
+                <p>项目描述...</p>
+            </div>
+        </section>
+
+        <section id="links">
+        <h2>常用学习平台</h2>
+        <div class="link-card">
+            <a href="https://i.chaoxing.com" target="_blank" class="platform-link">
+                <h3>超星学习通</h3>
+            </a>
+            <p>国内领先的在线学习平台，提供海量课程资源</p>
+        </div>
+        
+        <div class="link-card">
+            <a href="https://pintia.cn" target="_blank" class="platform-link">
+                <h3>PTA平台</h3>
+            </a>
+            <p>程序设计实验辅助教育平台，编程练习必备</p>
+        </div>
+    </section>
+
+        <section id="contact">
+            <h2>联系我</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="你的名字" required>
+                <input type="email" placeholder="你的邮箱" required>
+                <textarea placeholder="你的留言" required></textarea>
+                <button type="submit">发送</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 我的个人网站</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
